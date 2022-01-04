@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
 
+import ListButton from "./ListButton";
+
 function PokemonList(props) {
     const [pokemons, setPokemons] = useState([]);
 
@@ -19,14 +21,14 @@ function PokemonList(props) {
         if(props.searchWord === ""){
             poke = pokemons.map((pokemon) => {
                 return(
-                    <li key={pokemon.name}>{pokemon.name}</li>
+                    <ListButton pokemon={pokemon} setSelectedPokemon={props.setSelectedPokemon}/>
                 );
             })
         } else{
             poke = pokemons.map((pokemon) => {
                 if(pokemon.name.includes(props.searchWord)){
                 return(
-                    <li key={pokemon.name}>{pokemon.name}</li>
+                    <ListButton pokemon={pokemon} setSelectedPokemon={props.setSelectedPokemon}/>
                 );
             }
             return null;

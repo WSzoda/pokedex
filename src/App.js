@@ -1,9 +1,15 @@
 import './App.css';
 import SideBar from './components/SideBar';
+import PokemonInfo from './components/PokemonInfo';
+import {useState} from "react";
 
 function App() {
+    const [selectedPokemon, setSelectedPokemon] = useState('bulbasaur');
   return (
-    <SideBar />
+      <div>
+          <PokemonInfo selectedPokemon={selectedPokemon}/>
+          <SideBar setSelectedPokemon={setSelectedPokemon}/>
+      </div>
   );
 }
 
