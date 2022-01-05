@@ -1,15 +1,15 @@
-import './App.css';
-import SideBar from './components/SideBar';
-import PokemonInfo from './components/PokemonInfo';
-import {useState} from "react";
+import "./App.css";
+import SideBar from "./components/SideBar/SideBar";
+import PokemonInfo from "./components/PokemonInfo/PokemonInfo";
+import { useState } from "react";
 
 function App() {
-    const [selectedPokemon, setSelectedPokemon] = useState('bulbasaur');
+  const [selectedPokemon, setSelectedPokemon] = useState("bulbasaur");
   return (
-      <div>
-          <PokemonInfo selectedPokemon={selectedPokemon}/>
-          <SideBar setSelectedPokemon={setSelectedPokemon}/>
-      </div>
+    <div className="app">
+      <PokemonInfo selectedPokemon={selectedPokemon} />
+      <SideBar setSelectedPokemon={setSelectedPokemon} />
+    </div>
   );
 }
 
